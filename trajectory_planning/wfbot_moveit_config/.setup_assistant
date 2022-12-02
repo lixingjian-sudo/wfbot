@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: wfbot
+    relative_path: urdf/wfbot.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/wfbot.srdf
+  CONFIG:
+    author_name: c
+    author_email: c@c.com
+    generated_timestamp: 1668767458

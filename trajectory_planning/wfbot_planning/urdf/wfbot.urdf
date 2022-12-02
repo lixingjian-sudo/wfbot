@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="wfbot">
+  <link name="world"/>
+  <joint name="fixed" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint>
+    <link name="base_link">
+        <inertial>
+            <origin xyz="-1.00656249564408E-17 -9.83055930526371E-18 0.0165571122119112" rpy="0 0 0" />
+            <mass value="0.834141690485051" />
+            <inertia ixx="0.000711770056652346" ixy="-6.25348543090089E-20" ixz="-1.3400325923359E-20" iyy="0.000711770056652346" iyz="1.52024383113047E-20" izz="0.00124185067375552" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wfbot/meshes/base_link.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wfbot/meshes/base_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="link1">
+        <inertial>
+            <origin xyz="-2.81688983999106E-10 0.00519573727821417 -0.0188734513627191" rpy="0 0 0" />
+            <mass value="0.156240644307852" />
+            <inertia ixx="7.05091370799355E-05" ixy="-8.03663538766441E-12" ixz="-1.47753086330634E-12" iyy="6.69576826730205E-05" iyz="-1.53211780887282E-05" izz="2.86580858881946E-05" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wfbot/meshes/link1.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wfbot/meshes/link1.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint1" type="revolute">
+        <origin xyz="0 0 0.1" rpy="0 0 0" />
+        <parent link="base_link" />
+        <child link="link1" />
+        <axis xyz="0 0 1" />
+        <limit lower="-3.14" upper="3.14" effort="100" velocity="1" />
+    </joint>
+    <link name="link2">
+        <inertial>
+            <origin xyz="0.100000018754715 -9.46856132276896E-08 0.00283719869373054" rpy="0 0 0" />
+            <mass value="0.572252699208686" />
+            <inertia ixx="0.000100923501154532" ixy="-1.8243518273407E-10" ixz="8.49293710223378E-11" iyy="0.00243781342096495" iyz="-3.14549317909271E-09" izz="0.00242688486248831" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wfbot/meshes/link2.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wfbot/meshes/link2.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint2" type="revolute">
+        <origin xyz="0 0 0" rpy="1.5707963267949 -1.5707963267949 0" />
+        <parent link="link1" />
+        <child link="link2" />
+        <axis xyz="0 0 1" />
+        <limit lower="-1.57" upper="1.57" effort="100" velocity="1" />
+    </joint>
+    <link name="link3">
+        <inertial>
+            <origin xyz="-1.25951693519255E-10 -0.0443518151081069 -0.00283716003301226" rpy="0 0 0" />
+            <mass value="0.286126076756022" />
+            <inertia ixx="0.000332852760826762" ixy="-3.28805919140135E-13" ixz="-4.0577624995571E-11" iyy="5.0461218395735E-05" iyz="3.60041029529342E-05" izz="0.000327386314574333" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wfbot/meshes/link3.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wfbot/meshes/link3.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint3" type="revolute">
+        <origin xyz="0.2 0 0" rpy="0 0 0" />
+        <parent link="link2" />
+        <child link="link3" />
+        <axis xyz="0 0 1" />
+        <limit lower="-1.57" upper="4.71" effort="100" velocity="1" />
+    </joint>
+    <link name="link4">
+        <inertial>
+            <origin xyz="-9.88443771277048E-11 0.00222982752227358 -0.0594749469822113" rpy="0 0 0" />
+            <mass value="0.364057746361743" />
+            <inertia ixx="0.000650860939723801" ixy="-2.56683016608169E-11" ixz="1.05503032223504E-13" iyy="0.000644901325062689" iyz="-4.82808398717736E-05" izz="6.28874225725151E-05" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wfbot/meshes/link4.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wfbot/meshes/link4.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint4" type="revolute">
+        <origin xyz="0 -0.23 0" rpy="1.5707963267949 0 0" />
+        <parent link="link3" />
+        <child link="link4" />
+        <axis xyz="0 0 1" />
+        <limit lower="-3.14" upper="3.14" effort="100" velocity="1" />
+    </joint>
+    <link name="link5">
+        <inertial>
+            <origin xyz="1.08881964555607E-09 -0.0162779227933748 -0.00566683550817857" rpy="0 0 0" />
+            <mass value="0.143252012983312" />
+            <inertia ixx="5.74963388229914E-05" ixy="2.47035467229364E-12" ixz="2.20650210671046E-12" iyy="2.62867188759384E-05" iyz="1.32141872996001E-05" izz="5.43272563819677E-05" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wfbot/meshes/link5.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wfbot/meshes/link5.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint5" type="revolute">
+        <origin xyz="0 0 0" rpy="-1.5707963267949 0 0" />
+        <parent link="link4" />
+        <child link="link5" />
+        <axis xyz="0 0 -1" />
+        <limit lower="-1.57" upper="1.57" effort="100" velocity="1" />
+    </joint>
+    <link name="link6">
+        <inertial>
+            <origin xyz="0.009989 2.5238E-09 -2.0853E-09" rpy="0 0 0" />
+            <mass value="0.035028" />
+            <inertia ixx="2.3186E-06" ixy="-1.7581E-12" ixz="1.5719E-12" iyy="1.3667E-05" iyz="5.2365E-13" izz="1.544E-05" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wfbot/meshes/link6.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.89804 0.91765 0.92941 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wfbot/meshes/link6.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint6" type="revolute">
+        <origin xyz="0 -0.05 0" rpy="1.5708 1.5708 0" />
+        <parent link="link5" />
+        <child link="link6" />
+        <axis xyz="0 0 -1" />
+        <limit lower="-3.14" upper="3.14" effort="100" velocity="1" />
+    </joint>
+    <link name="tool">
+        <inertial>
+            <origin xyz="-0.02 -5.5511E-17 5.5511E-17" rpy="0 0 0" />
+            <mass value="0.00972" />
+            <inertia ixx="7.3629E-07" ixy="5.7175E-23" ixz="1.0422E-23" iyy="1.3033E-06" iyz="4.4997E-22" izz="2.025E-06" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wfbot/meshes/tool.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.89804 0.91765 0.92941 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wfbot/meshes/tool.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint7" type="fixed">
+        <origin xyz="0.1 0 0" rpy="-1.5708 0 0" />
+        <parent link="link6" />
+        <child link="tool" />
+        <axis xyz="0 0 0" />
+        <limit lower="0" upper="0" effort="0" velocity="0" />
+    </joint>
+    <transmission name="trans_joint1">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint1">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint1_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_joint2">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint2">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint2_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_joint3">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint3">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint3_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_joint4">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint4">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint4_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_joint5">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint5">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint5_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_joint6">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint6">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint6_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <gazebo>
+        <plugin name="gazebo_ros_control">
+            <robotNamespace>/</robotNamespace>
+        </plugin>
+    </gazebo>
+</robot>
+
